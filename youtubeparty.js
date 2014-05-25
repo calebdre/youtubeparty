@@ -57,6 +57,10 @@ if (Meteor.isClient)
 		}
 	});
 
+	Template.backstage.videos = function(){
+		return Queue.find({});
+	}
+
 	Template.onstage.title = "CodeDay Spring 2014 Opening Video"
 	
 	Template.backstage.events(

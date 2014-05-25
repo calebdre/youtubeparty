@@ -31,17 +31,18 @@ if (Meteor.isClient)
 
 	// ** END ROUTING SECTION **
 
-	Template.list.list = function()
+	/*Template.onstage.title = function()
 	{
-		return Queue.find({}, {sort: {time: 1}, limit: 2});
-	};
+		//does this work?
+		return Queue.findOne({}, {sort: {time: 1}}).title;
+	};*/
 	
 	Template.onstage.events(
 	{
 		"click button": function()
 		{
 			var video = Queue.findOne({}, {sort: {time: 1}});
-			
+			console.log(video);
 			if(video)
 			{
 				loadYoutubeVideoById(video.ytid);
@@ -71,14 +72,12 @@ if (Meteor.isClient)
 			
 			var ytimg = "http://i1.ytimg.com/vi/" + ytid + "/0.jpg";
 			
-			var _id = Queue.insert({time: new Date().getTime(), ytid: ytid, ytimg: ytimg});
-			
 			$.get("http://gdata.youtube.com/feeds/api/videos/" + ytid, function(data)
 			{
 				var title = $(data).find("title").text();
 				title = title.substring(0, title.length / 2);
 				
-				Queue.update(_id, {title: title, ytimg: ytimg});
+				Queue.insert({title: title, ytimg: ytimg, time: new Date().getTime(), ytid: ytid, ytimg: ytimg});
 			});
 		}
 	});

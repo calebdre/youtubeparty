@@ -12,9 +12,9 @@ if (Meteor.isClient)
 			f.depend();
 			 if(isLoggedIn){
 			 		if($('#audience').prop('checked')){
-			 			return Template.backstage;
+			 			return Template.onstage;
 			 		}
-					return Template.onstage;
+					return Template.backstage;
 				}else{
 					return Template.splash;
 				}

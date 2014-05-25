@@ -1,0 +1,30 @@
+.song-display{
+    background-color:$green;
+    color:#ffffff;
+    position:absolute;
+    bottom:0;
+    @include cf();
+}
+
+.now-playing-area{
+    padding-left:25px;
+    padding-top:5px;
+    @include col(3/4);
+}
+
+.up-next-area{
+    background-color:darken($green, 5%);
+    @include col(1/4);
+    padding-top:7px;
+    padding-left:10px;
+}
+
+.play-button{
+    font-size:3em;
+    padding:0 25px;
+}
+.now-playing-area{
+    h2, h3, h4{
+        margin: 0;
+    }
+}

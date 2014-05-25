@@ -1,0 +1,60 @@
+@for $i from 1 through 4{
+    .row-of-#{$i}{
+        @include cf();
+        
+        > *{
+            @include col(1/$i);    
+        }
+    }
+}
+
+$directions: (top, bottom, left, right);
+
+@each $d in $directions{
+    .push-#{$d}{
+        margin-#{$d}: 20px;
+    }
+    
+    .push-#{$d}-list{
+        > *{
+            @extend .push-#{$d};
+        }
+    }
+    
+    .pad-#{$d}{
+        padding-#{$d}: 20px;
+    }
+}
+
+.inline{
+    > *{
+       display:inline-block; 
+    }
+}
+
+.side{
+    float:left;
+    position:relative;
+}
+
+.left-col{
+    @include span(2/3);
+    @extend .side;
+}
+.right-col{
+    @include span(1/3);
+    @extend .side;
+}
+%center{
+    margin: 0 auto;
+}
+
+.inner-wrapper-8{
+    max-width:80%;
+    margin: 0 auto;
+    
+}
+.inner-wrapper{
+    max-width:70%;
+    margin: 0 auto;
+}

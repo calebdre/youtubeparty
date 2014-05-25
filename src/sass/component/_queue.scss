@@ -1,0 +1,26 @@
+.queue-container{
+    border-left:1px solid darken($blue, 5%);
+    position:relative;
+}
+
+.queue-item{
+    padding:5px 20px;
+    border-top:1px solid darken($blue,2%);
+    
+    &:first-child{
+        padding-top:0;
+        border-top:0;
+    }
+}
+.queue-item-search{
+    border-radius:0;
+    height:40px;
+}
+
+.user-profile{
+    position:absolute;
+    bottom:0;
+    i{
+        font-size:1.5em;
+    }
+}

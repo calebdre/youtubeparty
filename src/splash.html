@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Youtube Party</title>
+        <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
+    </head>
+    <body>
+         <div class="theme-blue" id="container">
+            <div class="inner-wrapper text-center" id="main">
+                <hgroup class="top-heading">
+                    <h1 class="pad-top no-margin push-bottom ">Youtube Party</h1>
+                    <h3>Share videos on youtube and make it a party</h3>    
+                </hgroup>
+                <div >
+                    <h4>Sign in as a guest</h4>
+                    <form method="post" action="/login" >
+                            <input class="form-control email-form" name="email" placeholder="Enter your email to start the party!"><br>
+                            <button type="submit" class="btn btn-success">Join the party!</button>
+                    </form>
+                    <br>
+                    <!--<h4>Sign in with one of these accounts</h4>-->
+                     <!--<div class="push-top push-left-list">-->
+                     <!--    <a class="btn btn-default btn-lg" href="#">facebook &nbsp; <i class="fa fa-facebook"></i> </a>-->
+                     <!--    <a class="btn btn-default btn-lg" href="#">twitter &nbsp; <i class="fa fa-twitter"></i> </a>-->
+                     <!--    <a class="btn btn-default btn-lg" href="/login/google">google &nbsp; <i class="fa fa-google-plus"></i> </a>-->
+                     <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <script src="js/vendor/jquery.js"></script>
+        <script>
+            $('#container').css('height', $(window).height());
+            
+            $('#main').css('padding-top', (($(window).height() / 2) - $('#main').height()))
+        </script>
+    </body>
+</html>

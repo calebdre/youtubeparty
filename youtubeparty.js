@@ -60,7 +60,7 @@ if (Meteor.isClient)
 		"submit form": function(event)
 		{
 			event.preventDefault();
-			var yturl = $("[name=yturl]").val();
+			var yturl = $("#queue-item").val();
 			var ytid = getIdFromUrl(yturl);
 
 			if(!ytid){
@@ -68,7 +68,7 @@ if (Meteor.isClient)
 				return;
 			}
 
-			$("[name=yturl]").val(new String());
+			$("#queue-item").val(new String());
 			
 			var ytimg = "http://i1.ytimg.com/vi/" + ytid + "/0.jpg";
 			
@@ -100,11 +100,13 @@ function getIdFromUrl(yturl)
 {
 	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
 
-	 if(yturl.match(regExp)){
-		return ytid[7];
-	};
-	return false;
+	 var ytid = yturl.match(regExp);
 
+	 if(ytid){
+	 	return ytid[7];
+	 }else{
+	 	return false;
+	 }
 }
 
 function loadYoutubeVideoById(ytid)

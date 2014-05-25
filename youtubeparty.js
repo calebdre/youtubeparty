@@ -2,6 +2,11 @@ var Queue = new Meteor.Collection("queue");
 
 if (Meteor.isClient)
 {
+	Template.queue.list = function()
+	{
+		return Queue.find({}, {sort: {time: 1}, limit: 2});
+	};
+	
 	Template.onstage.events(
 	{
 		"click button": function()
@@ -20,7 +25,7 @@ if (Meteor.isClient)
 		}
 	});
 	
-	/*Template.add2queue.events(
+	Template.backstage.events(
 	{
 		"submit form": function(event)
 		{
@@ -46,7 +51,7 @@ if (Meteor.isClient)
 	Template.queue.list = function()
 	{
 		return Queue.find({});
-	};*/
+	};
 }
 
 if (Meteor.isServer)

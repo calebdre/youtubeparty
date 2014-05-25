@@ -64,7 +64,9 @@ if (Meteor.isServer)
 
 function getIdFromUrl(yturl)
 {
-	return yturl; //todo: regex!
+	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+	var ytid = yturl.match(regExp);
+	return ytid[7];
 }
 
 function loadYoutubeVideoById(ytid)

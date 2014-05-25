@@ -61,6 +61,12 @@ if (Meteor.isClient)
 			event.preventDefault();
 			var yturl = $("[name=yturl]").val();
 			var ytid = getIdFromUrl(yturl);
+
+			if(!ytid){
+				alert('Invalid url!');
+				return;
+			}
+
 			$("[name=yturl]").val(new String());
 			
 			var ytimg = "http://i1.ytimg.com/vi/" + ytid + "/0.jpg";
@@ -94,8 +100,12 @@ if (Meteor.isServer)
 function getIdFromUrl(yturl)
 {
 	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-	var ytid = yturl.match(regExp);
-	return ytid[7];
+
+	 if(yturl.match(regExp)){
+		return ytid[7];
+	};
+	return false;
+
 }
 
 function loadYoutubeVideoById(ytid)

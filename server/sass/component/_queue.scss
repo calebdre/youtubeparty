@@ -1,6 +1,7 @@
 .queue-container{
-    border-left:1px solid darken($blue, 5%);
     position:relative;
+    max-width:70%;
+    margin: 0 auto;
 }
 
 .queue-item{

@@ -1,6 +1,30 @@
 <template name="backstage">
-	{{> add2queue}}
-	{{> queue}}
+	<div class="theme-blue">
+		<div class="backstage ">
+		                <section class="queue-container">
+		                    <form >
+			                    	<div class="input-group">
+        				                    	<input  class="queue-item-search form-control" type="text" placeholder="paste a youtube video" id="queue-item">
+        				                    	<span class="input-group-addon"><button type="submit"><i class="fa fa-search fa-fw"></i></button></span>
+			                    	</div>
+
+		                    </form>
+		                    
+		                    <div class="queue-item media user-profile">
+		                            <p><small class="text-muted">Currently logged in as: </small></p>
+		                            <i class="media-object pull-left  fa-user fa"></i>
+		                            <div class="media-body">
+		                                <p>Username </p>
+		                            </div>
+		                    </div>
+		                    
+		                </section>
+		            </div>
+	</div>
+
+            <script>
+            	$('.queue-container').css('height', $(window).height());
+            </script>
 </template>
 
 <template name="add2queue">

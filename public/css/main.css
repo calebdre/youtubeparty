@@ -231,7 +231,7 @@
   padding-left: 0;
   padding-right: 0;
   text-align: inherit;
-  width: 100%;
+  width: 66.66667%;
   margin-left: 0%;
   margin-right: 0%;
 }
@@ -308,33 +308,34 @@
 
 /* line 1, ../../server/sass/component/_queue.scss */
 .queue-container {
-  border-left: 1px solid #116c87;
   position: relative;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
-/* line 6, ../../server/sass/component/_queue.scss */
+/* line 7, ../../server/sass/component/_queue.scss */
 .queue-item {
   padding: 5px 20px;
   border-top: 1px solid #137795;
 }
-/* line 10, ../../server/sass/component/_queue.scss */
+/* line 11, ../../server/sass/component/_queue.scss */
 .queue-item:first-child {
   padding-top: 0;
   border-top: 0;
 }
 
-/* line 15, ../../server/sass/component/_queue.scss */
+/* line 16, ../../server/sass/component/_queue.scss */
 .queue-item-search {
   border-radius: 0;
   height: 40px;
 }
 
-/* line 20, ../../server/sass/component/_queue.scss */
+/* line 21, ../../server/sass/component/_queue.scss */
 .user-profile {
   position: absolute;
   bottom: 0;
 }
-/* line 23, ../../server/sass/component/_queue.scss */
+/* line 24, ../../server/sass/component/_queue.scss */
 .user-profile i {
   font-size: 1.5em;
 }
@@ -345,8 +346,6 @@
   color: #ffffff;
   position: absolute;
   bottom: 0;
-  left:0;
-  right:0;
   *zoom: 1;
 }
 /* line 197, ../../server/sass/vendor/jeet/_grid.scss */
@@ -447,20 +446,4 @@
 /* line 18, ../../server/sass/main.scss */
 p {
   padding: 0;
-}
-
-iframe
-{
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 95px;
-	margin: auto;
-	position: absolute;
-}
-
-
-html
-{
-	background-color: #147e9e;
 }

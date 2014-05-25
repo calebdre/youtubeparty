@@ -3,7 +3,7 @@
 		<div class="media-container">
 			<div class="youtube-box">
 				<iframe id="video" type="text/html" width="425" height="356"
-				src="https://www.youtube.com/v/rZelHlm8e-A?enablejsapi=1&autoplay=1"
+				src="https://www.youtube.com/v/DYyTsyFya10?enablejsapi=1&autoplay=1"
 				frameborder="0"></iframe>
 			</div>
 		</div>
@@ -13,6 +13,8 @@
 			<a href="#" class="btn btn-danger"><i class="fa fa-meh-o"></i> &nbsp;Meh</a>
 		</div>-->
 	</div>
+	<button>advance?</button>
+	{{> queue}}
 	<div class="song-display">
 		<div class="now-playing-area">
 			<div class="inline">
@@ -27,8 +29,17 @@
 			</div>
 		</div>
 		<div class="up-next-area">
-			<h4>Up next: song name</h4>
-			<p><small>Queued by: usernmae</small></p>
+			<img id="thumbnail"/>
 		</div>
 	</div>
+</template>
+
+<template name="queue">
+	<ul>
+		{{#each list}}
+		<li>
+			title
+		</li>
+		{{/each}}
+	</ul>
 </template>

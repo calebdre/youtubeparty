@@ -2,7 +2,25 @@ var Queue = new Meteor.Collection("queue");
 
 if (Meteor.isClient)
 {
-	Template.add2queue.events(
+	Template.onstage.events(
+	{
+		"click button": function()
+		{
+			var video = Queue.findOne({}, {sort: {time: 1}});
+			
+			if(video)
+			{
+				loadYoutubeVideoById(video.ytid);
+				Queue.remove(video._id);
+			}
+			else
+			{
+				loadYoutubeVideoById("DYyTsyFya10");
+			}
+		}
+	});
+	
+	/*Template.add2queue.events(
 	{
 		"submit form": function(event)
 		{
@@ -28,30 +46,7 @@ if (Meteor.isClient)
 	Template.queue.list = function()
 	{
 		return Queue.find({});
-	};
-	
-	Template.party.events(
-	{
-		"click button": function()
-		{
-			console.log("I'm clicked!");
-			
-			var video = Queue.findOne({}, {sort: {time: 1}});
-			
-			if(video)
-			{
-				console.log(video);
-				
-				loadYoutubeVideoById(video.ytid);
-				
-				Queue.remove(video._id);
-			}
-			else
-			{
-				loadYoutubeVideoById("DYyTsyFya10");
-			}
-		}
-	});
+	};*/
 }
 
 if (Meteor.isServer)

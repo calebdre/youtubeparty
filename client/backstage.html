@@ -1,7 +1,6 @@
-<template name="app">
+<template name="backstage">
 	{{> add2queue}}
 	{{> queue}}
-	{{> player}}
 </template>
 
 <template name="add2queue">
@@ -20,12 +19,4 @@
 			</li>
 		{{/each}}
 	</ul>
-</template>
-
-<template name="player">
-	<iframe id="video" type="text/html" width="425" height="356"
-	src="https://www.youtube.com/v/rZelHlm8e-A?enablejsapi=1&autoplay=1"
-	frameborder="0"></iframe>
-		
-	<button>Click here to advance to the next video. :]</button>
 </template>

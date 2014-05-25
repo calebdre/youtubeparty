@@ -1,5 +1,7 @@
 var Queue = new Meteor.Collection("queue");
 
+var timer = undefined;
+
 if (Meteor.isClient)
 {
 
@@ -41,19 +43,8 @@ if (Meteor.isClient)
 	{
 		"click button": function()
 		{
-			var video = Queue.findOne({}, {sort: {time: 1}});
-			console.log(video);
-			if(video)
-			{
-				loadYoutubeVideoById(video.ytid);
-				Queue.remove(video._id);
-				$("#title").html(video.title);
-			}
-			else
-			{
-				loadYoutubeVideoById("DYyTsyFya10");
-				$("#title").html("CodeDay Spring 2014 Opening Video");
-			}
+			if(timer) {clearTimeout(timer);}
+			loadNextYoutubeVideo();
 		}
 	});
 
@@ -104,7 +95,7 @@ if (Meteor.isServer)
 {
 	Meteor.startup(function()
 	{
-		Queue.remove({});
+		//Queue.remove({});
 	});
 }
 
@@ -124,4 +115,23 @@ function getIdFromUrl(yturl)
 function loadYoutubeVideoById(ytid)
 {
 	$("iframe").attr("src", "https://www.youtube.com/v/" + ytid + "?enablejsapi=1&autoplay=1");
+}
+
+function loadNextYoutubeVideo()
+{
+	var video = Queue.findOne({}, {sort: {time: 1}});
+	
+	if(video)
+	{
+		loadYoutubeVideoById(video.ytid);
+		Queue.remove(video._id);
+		$("#title").html(video.title);
+		
+		timer = setTimeout(loadNextYoutubeVideo, 60 * 1000);
+	}
+	else
+	{
+		loadYoutubeVideoById("DYyTsyFya10");
+		$("#title").html("CodeDay Spring 2014 Opening Video");
+	}
 }

@@ -5,20 +5,33 @@ if (Meteor.isClient)
 
 	// ** START ROUTING SECTION **
 	var isLoggedIn = false;
+	var f = new Deps.Dependency();
 
 	Template.dynamicTemplate.helpers({
 		router:function(){
+			f.depend();
 			 if(isLoggedIn){
-					return Template.party;
+			 		if($('#audience').prop('checked')){
+			 			return Template.backstage;
+			 		}
+					return Template.onstage;
 				}else{
 					return Template.splash;
 				}
 			}
-	})
+	});
+
+
+	Template.splash.events({"submit form": function(e, template){
+		e.preventDefault();
+		isLoggedIn = true;
+		f.changed();
+		return $('#email').val();
+	}});
 
 	// ** END ROUTING SECTION **
 
-	Template.queue.list = function()
+	Template.list.list = function()
 	{
 		return Queue.find({}, {sort: {time: 1}, limit: 2});
 	};

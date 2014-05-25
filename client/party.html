@@ -2,10 +2,11 @@
 
 <template name="party">
     <head>
+	
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-                
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
+		<link rel="stylesheet" type="text/css" href="css/main.css">
         
     </head>
     <body>
@@ -16,7 +17,9 @@
                     <h1 id="video-title"></h1>
                     <div class="media-container">
                         <div class="youtube-box">
-                            <div id="youtube-player">Uh oh! You need Flash8 to play this video.</div>
+                            <iframe id="video" type="text/html" width="425" height="356"
+							src="https://www.youtube.com/v/rZelHlm8e-A?enablejsapi=1&autoplay=1"
+							frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="voting-buttons">

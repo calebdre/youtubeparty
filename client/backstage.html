@@ -1,0 +1,22 @@
+<template name="backstage">
+	{{> add2queue}}
+	{{> queue}}
+</template>
+
+<template name="add2queue">
+	<form id="add-to-queue">
+		<input type="text" name="yturl"/>
+		<input type="submit" id="submit"/>
+	</form>
+</template>
+
+<template name="queue">
+	<ul>
+		{{#each list}}
+			<li>
+				<img src="{{ytimg}}"/>
+				{{title}}, {{ytid}}
+			</li>
+		{{/each}}
+	</ul>
+</template>

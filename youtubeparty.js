@@ -47,13 +47,17 @@ if (Meteor.isClient)
 			{
 				loadYoutubeVideoById(video.ytid);
 				Queue.remove(video._id);
+				$("#title").html(video.title);
 			}
 			else
 			{
 				loadYoutubeVideoById("DYyTsyFya10");
+				$("#title").html("CodeDay Spring 2014 Opening Video");
 			}
 		}
 	});
+
+	Template.onstage.title = "CodeDay Spring 2014 Opening Video"
 	
 	Template.backstage.events(
 	{

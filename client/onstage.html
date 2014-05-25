@@ -1,11 +1,13 @@
 <template name="onstage">
+<div id="container" class="theme-blue">
 	<div id="video-display" class="inner-wrapper-8 text-center">
-		<div class="media-container">
+		<div class="media-container pad-top">
 			<div class="youtube-box">
 				<iframe id="video" type="text/html" width="425" height="356"
 				src="https://www.youtube.com/v/DYyTsyFya10?enablejsapi=1&autoplay=1"
 				frameborder="0"></iframe>
 			</div>
+			<p class="text-center"><button class="btn btn-success">Next Video</button></p>
 		</div>
 		<!--<div class="voting-buttons">
 			<a href="#" class="btn btn-warning"><i class="fa fa-exclamation"></i>  &nbsp;Sketchy</a>
@@ -13,7 +15,6 @@
 			<a href="#" class="btn btn-danger"><i class="fa fa-meh-o"></i> &nbsp;Meh</a>
 		</div>-->
 	</div>
-	<button>advance?</button>
 	<div class="song-display">
 		<div class="now-playing-area">
 			<div class="inline">
@@ -21,9 +22,9 @@
 					<div>
 						<div class="inline">
 							<h3>Song name:</h3>
-							<h2>title</h2>
+							<h2 id="title">{{title}}</h2>
 						</div>
-						<p><small>Queued by: username</small></p>
+						<!-- <p><small>Queued by: username</small></p> -->
 					</div>
 			</div>
 		</div>
@@ -31,4 +32,9 @@
 			<img id="thumbnail"/>
 		</div>
 	</div>
+</div>
+	<script>
+		$('#container').css('height', $(window).height());
+	            $('.song-display').css('width', $(window).width());
+            </script>
 </template>

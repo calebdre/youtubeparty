@@ -3,6 +3,8 @@
     color:#ffffff;
     position:absolute;
     bottom:0;
+    padding-bottom: 20px;
+    z-index:200;
     @include cf();
 }
 

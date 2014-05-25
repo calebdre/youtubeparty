@@ -2,8 +2,13 @@
     position:relative;
     max-width:70%;
     margin: 0 auto;
+    z-index: 100;
+    padding:10px 20px;
 }
 
+.queue-border{
+    border-left: 1px solid darken($blue, 10%);
+}
 .queue-item{
     padding:5px 20px;
     border-top:1px solid darken($blue,2%);

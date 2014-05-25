@@ -234,6 +234,7 @@
   width: 66.66667%;
   margin-left: 0%;
   margin-right: 0%;
+  position: relative;
 }
 /* line 197, ../../server/sass/vendor/jeet/_grid.scss */
 .left-col:before, .left-col:after {
@@ -245,7 +246,7 @@
   clear: both;
 }
 
-/* line 44, ../../server/sass/core/_layout.scss */
+/* line 45, ../../server/sass/core/_layout.scss */
 .right-col {
   *zoom: 1;
   float: left;
@@ -257,6 +258,7 @@
   width: 33.33333%;
   margin-left: 0%;
   margin-right: 0%;
+  position: relative;
 }
 /* line 197, ../../server/sass/vendor/jeet/_grid.scss */
 .right-col:before, .right-col:after {
@@ -268,18 +270,18 @@
   clear: both;
 }
 
-/* line 48, ../../server/sass/core/_layout.scss */
+/* line 50, ../../server/sass/core/_layout.scss */
 .email-form {
   margin: 0 auto;
 }
 
-/* line 52, ../../server/sass/core/_layout.scss */
+/* line 54, ../../server/sass/core/_layout.scss */
 .inner-wrapper-8 {
   max-width: 80%;
   margin: 0 auto;
 }
 
-/* line 57, ../../server/sass/core/_layout.scss */
+/* line 59, ../../server/sass/core/_layout.scss */
 .inner-wrapper {
   max-width: 70%;
   margin: 0 auto;
@@ -311,31 +313,38 @@
   position: relative;
   max-width: 70%;
   margin: 0 auto;
+  z-index: 100;
+  padding: 10px 20px;
 }
 
-/* line 7, ../../server/sass/component/_queue.scss */
+/* line 9, ../../server/sass/component/_queue.scss */
+.queue-border {
+  border-left: 1px solid #0e5a71;
+}
+
+/* line 12, ../../server/sass/component/_queue.scss */
 .queue-item {
   padding: 5px 20px;
   border-top: 1px solid #137795;
 }
-/* line 11, ../../server/sass/component/_queue.scss */
+/* line 16, ../../server/sass/component/_queue.scss */
 .queue-item:first-child {
   padding-top: 0;
   border-top: 0;
 }
 
-/* line 16, ../../server/sass/component/_queue.scss */
+/* line 21, ../../server/sass/component/_queue.scss */
 .queue-item-search {
   border-radius: 0;
   height: 40px;
 }
 
-/* line 21, ../../server/sass/component/_queue.scss */
+/* line 26, ../../server/sass/component/_queue.scss */
 .user-profile {
   position: absolute;
   bottom: 0;
 }
-/* line 24, ../../server/sass/component/_queue.scss */
+/* line 29, ../../server/sass/component/_queue.scss */
 .user-profile i {
   font-size: 1.5em;
 }
@@ -346,6 +355,8 @@
   color: #ffffff;
   position: absolute;
   bottom: 0;
+  padding-bottom: 20px;
+  z-index: 200;
   *zoom: 1;
 }
 /* line 197, ../../server/sass/vendor/jeet/_grid.scss */
@@ -358,7 +369,7 @@
   clear: both;
 }
 
-/* line 9, ../../server/sass/component/_song-display.scss */
+/* line 11, ../../server/sass/component/_song-display.scss */
 .now-playing-area {
   padding-left: 25px;
   padding-top: 5px;
@@ -387,7 +398,7 @@
   margin-right: 0%;
 }
 
-/* line 15, ../../server/sass/component/_song-display.scss */
+/* line 17, ../../server/sass/component/_song-display.scss */
 .up-next-area {
   background-color: #2ea042;
   *zoom: 1;
@@ -417,13 +428,13 @@
   margin-right: 0%;
 }
 
-/* line 22, ../../server/sass/component/_song-display.scss */
+/* line 24, ../../server/sass/component/_song-display.scss */
 .play-button {
   font-size: 3em;
   padding: 0 25px;
 }
 
-/* line 27, ../../server/sass/component/_song-display.scss */
+/* line 29, ../../server/sass/component/_song-display.scss */
 .now-playing-area h2, .now-playing-area h3, .now-playing-area h4 {
   margin: 0;
 }

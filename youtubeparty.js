@@ -57,6 +57,10 @@ if (Meteor.isClient)
 		}
 	});
 
+	Template.onstage.videos = function () {
+		return Queue.find({});
+	}
+
 	Template.backstage.videos = function(){
 		return Queue.find({});
 	}

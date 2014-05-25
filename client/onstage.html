@@ -1,40 +1,60 @@
 <template name="onstage">
-<div id="container" class="theme-blue">
-	<div id="video-display" class="inner-wrapper-8 text-center">
-		<div class="media-container pad-top">
-			<div class="youtube-box">
-				<iframe id="video" type="text/html" width="425" height="356"
-				src="https://www.youtube.com/v/DYyTsyFya10?enablejsapi=1&autoplay=1"
-				frameborder="0"></iframe>
+<div id="container" class="theme-blue pad-top">
+	<div class="left-col">
+		<div id="video-display" class="inner-wrapper-8 text-center">
+			<div class="media-container pad-top">
+				<div class="youtube-box">
+					<iframe id="video" type="text/html" width="425" height="356"
+					src="https://www.youtube.com/v/DYyTsyFya10?enablejsapi=1&autoplay=1"
+					frameborder="0"></iframe>
+				</div>
+				<p class="text-center"><button class="btn btn-success">Next Video</button></p>
 			</div>
-			<p class="text-center"><button class="btn btn-success">Next Video</button></p>
+			<!--<div class="voting-buttons">
+				<a href="#" class="btn btn-warning"><i class="fa fa-exclamation"></i>  &nbsp;Sketchy</a>
+				<a href="#" class="btn btn-success"><i class="fa-smile-o fa"></i>  &nbsp;Groovy</a>
+				<a href="#" class="btn btn-danger"><i class="fa fa-meh-o"></i> &nbsp;Meh</a>
+			</div>-->
 		</div>
-		<!--<div class="voting-buttons">
-			<a href="#" class="btn btn-warning"><i class="fa fa-exclamation"></i>  &nbsp;Sketchy</a>
-			<a href="#" class="btn btn-success"><i class="fa-smile-o fa"></i>  &nbsp;Groovy</a>
-			<a href="#" class="btn btn-danger"><i class="fa fa-meh-o"></i> &nbsp;Meh</a>
-		</div>-->
-	</div>
-	<div class="song-display">
-		<div class="now-playing-area">
-			<div class="inline">
-					<i class="fa-play-circle-o fa play-button"></i> 
-					<div>
-						<div class="inline pad-bottom">
-							<h3>Video name:</h3>
-							<h2 id="title">{{title}}</h2>
+		<div class="song-display">
+			<div class="now-playing-area">
+				<div class="inline">
+						<i class="fa-play-circle-o fa play-button"></i> 
+						<div>
+							<div class="inline pad-bottom">
+								<h3>Video name:</h3>
+								<h2 id="title">{{title}}</h2>
+							</div>
+							<!-- <p><small>Queued by: username</small></p> -->
 						</div>
-						<!-- <p><small>Queued by: username</small></p> -->
-					</div>
+				</div>
+			</div>
+			<div class="up-next-area">
+				<img id="thumbnail"/>
 			</div>
 		</div>
-		<div class="up-next-area">
-			<img id="thumbnail"/>
-		</div>
 	</div>
+	<div class="right-col">
+                <section class="queue-container queue-border">
+                	<p>Up next in the queue:</p>
+                     {{#each videos}}
+			<div class="queue-item media">
+	                            <img class="media-object pull-left" src="http://lorempixel.com/80/50">
+	                            <div class="media-body">
+	                                <p>{{title}}</p>
+	                                <div class="queue-options">
+	                                    <!-- <i id="delete-item" class="fa fa-trash-o"></i> -->
+	                                </div>
+	                            </div>
+	                    </div>
+	                {{/each}}
+                </section>
+            </div>
 </div>
 	<script>
 		$('#container').css('height', $(window).height());
+		$('.left-col').css('height', $(window).height());
+		$('.queue-container').css('height', $(window).height());
 	            $('.song-display').css('width', $(window).width());
             </script>
 </template>

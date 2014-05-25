@@ -14,7 +14,6 @@
 		</div>-->
 	</div>
 	<button>advance?</button>
-	{{> list}}
 	<div class="song-display">
 		<div class="now-playing-area">
 			<div class="inline">
@@ -22,7 +21,7 @@
 					<div>
 						<div class="inline">
 							<h3>Song name:</h3>
-							<h2>Name</h2>
+							<h2>title</h2>
 						</div>
 						<p><small>Queued by: username</small></p>
 					</div>
@@ -32,14 +31,4 @@
 			<img id="thumbnail"/>
 		</div>
 	</div>
-</template>
-
-<template name="list">
-	<ul>
-		{{#each list}}
-		<li>
-			title
-		</li>
-		{{/each}}
-	</ul>
 </template>

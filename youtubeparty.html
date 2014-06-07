@@ -3,5 +3,18 @@
 </head>
 
 <body>
-	Hello World!
+	{{> onstage}}
+	{{> backstage}}
 </body>
+
+<template name="onstage">
+	<div id="onstage">
+		<iframe id="player" type="text/html" src="{{yturl}}"></iframe>
+	</div>
+</template>
+
+<template name="backstage">
+	<div id="backstage">
+		
+	</div>
+</template>

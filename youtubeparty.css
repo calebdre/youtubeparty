@@ -2,3 +2,30 @@
 {
 	margin: 0em;
 }
+
+#onstage
+{
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 320px;
+	position: absolute;
+}
+
+#onstage > iframe
+{
+	width: 100%;
+	height: 100%;
+	
+	border: none;
+}
+
+#backstage
+{
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 320px;
+	position: absolute;
+	background-color: #147e9e;
+}

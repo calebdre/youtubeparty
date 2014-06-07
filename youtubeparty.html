@@ -3,18 +3,25 @@
 </head>
 
 <body>
-	{{> onstage}}
+	{{> upstage}}
+	{{> downstage}}
 	{{> backstage}}
 </body>
 
-<template name="onstage">
-	<div id="onstage">
+<template name="upstage">
+	<div id="upstage">
 		<iframe id="player" type="text/html" src="{{yturl}}"></iframe>
 	</div>
 </template>
 
 <template name="backstage">
 	<div id="backstage">
+		
+	</div>
+</template>
+
+<template name="downstage">
+	<div id="downstage">
 		
 	</div>
 </template>

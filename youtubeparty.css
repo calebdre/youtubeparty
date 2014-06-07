@@ -3,16 +3,16 @@
 	margin: 0em;
 }
 
-#onstage
+#upstage
 {
 	top: 0px;
 	left: 0px;
-	bottom: 0px;
-	right: 320px;
+	bottom: 6em;
+	right: 18em;
 	position: absolute;
 }
 
-#onstage > iframe
+#upstage > iframe
 {
 	width: 100%;
 	height: 100%;
@@ -25,7 +25,44 @@
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	width: 320px;
+	width: 18em;
 	position: absolute;
-	background-color: #147e9e;
+	background-color: #31829F;
+}
+
+#downstage
+{
+	left: 0px;
+	bottom: 0px;
+	right: 18em;
+	height: 6em;
+	position: absolute;
+	background-color: #D13E39;
+}
+
+@media(max-width: 640px)
+{
+	#upstage
+	{
+		top: 6em;
+		left: 0em;
+		right: 0em;
+		bottom: auto;
+		height: 18em;
+	}
+	
+	#downstage
+	{
+		top: 0em;
+		left: 0em;
+		right: 0em;
+		bottom: auto;
+	}
+	
+	#backstage
+	{
+		left: 0px;
+		top: 24em; /*18+6*/
+		width: auto;
+	}
 }

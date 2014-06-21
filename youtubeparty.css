@@ -3,6 +3,12 @@
 	margin: 0em;
 }
 
+html
+{
+	font-size: 18px;
+	font-family: calibri, sans-serif;
+}
+
 #onstage
 {
 	top: 0px;
@@ -22,20 +28,22 @@
 
 #backstage
 {
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	width: 18em;
+	top: 0rem;
+	right: 0rem;
+	bottom: 0rem;
+	width: 16rem;
+	padding: 1rem;
 	position: absolute;
 	background-color: #31829F;
 }
 
 #downstage
 {
-	left: 0px;
-	bottom: 0px;
-	right: 18em;
-	height: 6em;
+	left: 0rem;
+	bottom: 0rem;
+	right: 18rem;
+	height: 4rem;
+	padding: 1rem;
 	position: absolute;
 	background-color: #D13E39;
 }

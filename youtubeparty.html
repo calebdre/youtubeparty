@@ -10,18 +10,24 @@
 
 <template name="onstage">
 	<div id="onstage">
-		<!--<iframe type="text/html" src="{{yturl}}"></iframe>-->
+		{{#with video}}
+			<iframe type="application/x-shockwave-flash" src="https://www.youtube.com/v/{{ytid}}?version=3&autoplay=1"></iframe>
+		{{/with}}
 	</div>
 </template>
 
 <template name="backstage">
 	<div id="backstage">
-		
+		{{#each queue}}
+			<div>{{title}}</div>
+		{{/each}}
 	</div>
 </template>
 
 <template name="downstage">
 	<div id="downstage">
-		
+		{{#with party}}
+			{{time}}
+		{{/with}}
 	</div>
 </template>

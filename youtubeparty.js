@@ -3,8 +3,7 @@ Parties = new Meteor.Collection("parties");
 
 if (Meteor.isClient)
 {
-
-	console.log("Just ignore all these errors that are from youtube. :]")
+	console.log("Just ignore all these errors from Youtube.");
 
 	Template.onstage.video = function()
 	{
@@ -20,6 +19,32 @@ if (Meteor.isClient)
 	{
 		return Parties.findOne({});
 	}
+
+	onYouTubeIframeAPIReady = function()
+	{
+		$(document).ready(function()
+		{
+			var player = new YT.Player("youtube",
+			{
+				events:
+				{
+					"onReady": function(event)
+					{
+						console.log("begin playing the video");
+					},
+					"onStageChange": function(event)
+					{
+						console.log(event.data);
+						if(event.data = YT.PlayerState.ENDED)
+						{
+							var video = Videos.findOne({}, {sort: {timestamp: 1}});
+							Videos.remove(video._id);
+						}
+					}
+				}
+			});
+		})
+	};
 }
 
 if(Meteor.isServer)

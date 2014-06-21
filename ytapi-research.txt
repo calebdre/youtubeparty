@@ -1,0 +1,18 @@
+rel (supported players: AS3, HTML5)
+Values: 0 or 1. Default is 1. This parameter indicates whether the player should show related videos when playback of the initial video ends.
+
+showinfo (supported players: AS3, HTML5)
+Values: 0 or 1. The parameter's default value is 1. If you set the parameter value to 0, then the player will not display information like the video title and uploader before the video starts playing.
+
+start (supported players: AS3, HTML5)
+Values: A positive integer. This parameter causes the player to begin playing the video at the given number of seconds from the start of the video. Note that similar to the seekTo function, the player will look for the closest keyframe to the time you specify. This means that sometimes the play head may seek to just before the requested time, usually no more than around two seconds.
+
+theme (supported players: AS3, HTML5)
+This parameter indicates whether the embedded player will display player controls (like a play button or volume control) within a dark or light control bar. Valid parameter values are dark and light, and, by default, the player will display player controls using the dark theme. See the YouTube API blog for more information about the dark and light themes.
+
+modestbranding (supported players: AS3, HTML5)
+This parameter lets you use a YouTube player that does not show a YouTube logo. Set the parameter value to 1 to prevent the YouTube logo from displaying in the control bar. Note that a small YouTube text label will still display in the upper-right corner of a paused video when the user's mouse pointer hovers over the player.
+
+
+
+https://developers.google.com/youtube/iframe_api_reference

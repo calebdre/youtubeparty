@@ -1,5 +1,6 @@
 <head>
 	<title>YoutubeParty</title>
+	<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
 </head>
 
 <body>
@@ -11,7 +12,7 @@
 <template name="onstage">
 	<div id="onstage">
 		{{#with video}}
-			<iframe type="application/x-shockwave-flash" src="https://www.youtube.com/v/{{ytid}}?version=3&autoplay=1"></iframe>
+			<iframe id="youtube" src="http://www.youtube.com/embed/{{ytid}}?autoplay=1&enablejsapi=1"></iframe>
 		{{/with}}
 	</div>
 </template>

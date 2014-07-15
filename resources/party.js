@@ -16,3 +16,28 @@ $("#queue").submit(function(event)
 	var value = $(this).find("input").val();
 	socket.emit("queue a video", value);
 });
+
+//this will generate a lot of odd
+//youtube errors; just ignore them.
+
+/*onYouTubeIframeAPIReady = function()
+{
+	var player = new YT.Player("youtube",
+	{
+		events:
+		{
+			"onReady": function(event)
+			{
+				console.log("begin playing the video");
+			},
+			"onStageChange": function(event)
+			{
+				console.log(event.data);
+				if(event.data = YT.PlayerState.ENDED)
+				{
+					console.log("IT IS OVER!");
+				}
+			}
+		}
+	});
+};*/

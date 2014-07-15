@@ -1,12 +1,12 @@
 {
-	"name": "youtubeparty",
-	"version": "0.4.2",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/calebdre/youtubeparty.git"
-	},
-	"dependencies": {
-		"express": "*",
-		"socket.io": "*"
-	}
+  "name": "youtubeparty",
+  "version": "0.4.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calebdre/youtubeparty.git"
+  },
+  "dependencies": {
+    "express": "~4.6.1",
+    "socket.io": "~1.0.6"
+  }
 }

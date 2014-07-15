@@ -66,11 +66,16 @@ var Party = new function()
 	
 	this._tick = function()
 	{
-		console.log("party!");
+		this.data.time = this.data.time < this.data.length ? this.data.time + 1 : 0 ;
+		{
+			this.data.time == 0;
+		}
 		
 		for(var index in this._sockets)
 		{
-			this._sockets[index].emit("party!");
+			this._sockets[index].emit("party", this.data);
 		}
 	}
+	
+	this.data = {ytid: "eBh2IYjJNX8", time: 0, length: 317};
 }

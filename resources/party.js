@@ -7,9 +7,17 @@ socket.on("disconnect", function()
 	window.location = window.location;
 });
 
-socket.on("party!", function()
+socket.on("party", function(data)
 {
-	console.log("PARTY!");
+	if(player.getVideoId() != data.ytid)
+	{
+		player.loadVideoById(data.ytid);
+	}
+	
+	if(Math.abs(player.getCurrentTime() - data.time) > 5)
+	{
+		player.seekTo(data.time);
+	}
 });
 
 $("#queue").submit(function(event)
@@ -31,7 +39,7 @@ function onYouTubeIframeAPIReady()
 	{
 		height: "390",
 		width: "640",
-		videoId: "eBh2IYjJNX8",
+		videoId: "DYyTsyFya10",
 		playerVars:
 		{
 			rel: 0, //do not show related videos
@@ -42,16 +50,20 @@ function onYouTubeIframeAPIReady()
 		{
 			"onReady": function(event)
 			{
-				console.log("ready");
+				player.getVideoId = function()
+				{
+					return this.getVideoUrl().match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/)[7];
+				}
 			},
 			"onStateChange": function(event)
 			{
-				if(event.data == YT.PlayerState.PLAYING)
-				{
-					event.target.seekTo(20);
-					console.log("playing the video!");
-				}
+				//?!
 			}
 		}
 	});
+}
+
+function getYoutubeID(yturl)
+{
+	return yturl.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/)[7];
 }

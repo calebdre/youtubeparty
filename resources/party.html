@@ -4,18 +4,19 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>YoutubeParty</title>
-		<!--<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>-->
 	</head>
 	<body>
 		<div id="party">
-			<!--<iframe id="youtube" src="//youtube.com/embed/eBh2IYjJNX8?autoplay=1&enablejsapi=1"></iframe>-->
+			<!--youtube embeds here-->
+			<div id="youtube"></div>
 		</div>
 		<form id="queue">
 			<input type="text" placeholder="queue a video for the party!"/>
 		</form>
 		
-		<script src="/jquery/jquery.js" type="text/javascript"></script>
+		<script src="//www.youtube.com/iframe_api" type="text/javascript"></script>
 		<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+		<script src="/utilities/jquery.js" type="text/javascript"></script>
 		
 		<script src="/party.js" type="text/javascript"></script>
 		<link href="/party.css" type="text/css" rel="stylesheet"/>

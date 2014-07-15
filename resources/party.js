@@ -20,24 +20,34 @@ $("#queue").submit(function(event)
 //this will generate a lot of odd
 //youtube errors; just ignore them.
 
-/*onYouTubeIframeAPIReady = function()
+var player;
+function onYouTubeIframeAPIReady()
 {
-	var player = new YT.Player("youtube",
+	player = new YT.Player("youtube",
 	{
+		height: "390",
+		width: "640",
+		videoId: "eBh2IYjJNX8",
+		playerVars:
+		{
+			rel: 0, //do not show related videos
+			autoplay: 1, //autoplay when loaded
+			//developers.google.com/youtube/player_parameters
+		},
 		events:
 		{
 			"onReady": function(event)
 			{
-				console.log("begin playing the video");
+				console.log("ready");
 			},
-			"onStageChange": function(event)
+			"onStateChange": function(event)
 			{
-				console.log(event.data);
-				if(event.data = YT.PlayerState.ENDED)
+				if(event.data == YT.PlayerState.PLAYING)
 				{
-					console.log("IT IS OVER!");
+					event.target.seekTo(20);
+					console.log("playing the video!");
 				}
 			}
 		}
 	});
-};*/
+}

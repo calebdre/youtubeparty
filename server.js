@@ -6,7 +6,7 @@ application.get("/", function(request, response)
 {
 	response.redirect("party.html");
 });
-server = http.Server(application);
+server = require("http").Server(application);
 server.listen(process.env.PORT || 1271);
 
 var io = require("socket.io")(server);

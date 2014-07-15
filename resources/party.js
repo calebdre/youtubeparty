@@ -7,6 +7,11 @@ socket.on("disconnect", function()
 	window.location = window.location;
 });
 
+socket.on("party!", function()
+{
+	console.log("PARTY!");
+});
+
 $("#queue").submit(function(event)
 {
 	//intercept the form.
@@ -20,7 +25,6 @@ $("#queue").submit(function(event)
 //this will generate a lot of odd
 //youtube errors; just ignore them.
 
-var player;
 function onYouTubeIframeAPIReady()
 {
 	player = new YT.Player("youtube",

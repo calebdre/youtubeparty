@@ -2,3 +2,48 @@
 {
 	margin: 0px;
 }
+
+html
+{
+	width: 100%;
+	height: 100%;
+	
+	font-size: 18px;
+	font-family: open-sans, calibri, sans-serif;
+}
+
+body
+{
+	width: 100%;
+	height: 100%;
+}
+
+#party
+{
+	width: 100%;
+	height: 100%;
+	
+	background-color: #222;
+}
+
+#party > video
+{
+	width: 100%;
+	height: 100%;
+}
+
+#queue
+{
+	padding: 1rem;
+	
+	background-color: #EEE;
+}
+
+#queue > input
+{
+	width: 100%;
+	padding: 0.25rem;
+	box-sizing: border-box;
+	
+	font: inherit;
+}

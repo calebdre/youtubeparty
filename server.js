@@ -15,8 +15,7 @@ server.listen(process.env.PORT || 1271);
 var io = require("socket.io")(server);
 io.on("connection", function(socket)
 {
-	Partyroom.add(socket);
-	console.log(Partyroom.size());
+	Partyroom.join(socket);
 	
 	socket.on("queue a video", function(value)
 	{
@@ -28,21 +27,22 @@ io.on("connection", function(socket)
 	
 	socket.on("disconnect", function()
 	{
-		Partyroom.remove(socket);
-		console.log(Partyroom.size());
+		Partyroom.quit(socket);
 	});
 });
 
 var Partyroom = new function()
 {
-	this.add = function(socket)
+	this.join = function(socket)
 	{
 		this._sockets[socket.id] = socket;
+		if(this.size() == 1) {Partyvideo.start();}
 	}
 	
-	this.remove = function(socket)
+	this.quit = function(socket)
 	{
 		delete this._sockets[socket.id];
+		if(this.size() == 0) {Partyvideo.stop();}
 	}
 	
 	this.size = function(socket)
@@ -51,4 +51,24 @@ var Partyroom = new function()
 	}
 	
 	this._sockets = {};
+}
+
+var Partyvideo = new function()
+{
+	this.start = function()
+	{
+		clearInterval(this.interval);
+		this.interval = setInterval(this._tick, 1000);
+	}
+	
+	this.stop = function()
+	{
+		clearInterval(this.interval);
+		this.interval = undefined;
+	}
+	
+	this._tick = function()
+	{
+		console.log("party!");
+	}
 }

@@ -9,11 +9,13 @@ socket.on("disconnect", function()
 
 socket.on("party", function(data)
 {
+	//if it is not playing the video.
 	if(player.getVideoId() != data.ytid)
 	{
 		player.loadVideoById(data.ytid);
 	}
 	
+	//if it is off by more than five seconds.
 	if(Math.abs(player.getCurrentTime() - data.time) > 5)
 	{
 		player.seekTo(data.time);
@@ -30,22 +32,22 @@ $("#queue").submit(function(event)
 	socket.emit("queue a video", value);
 });
 
-//this will generate a lot of odd
+//this may generate a lot of odd
 //youtube errors; just ignore them.
 
 function onYouTubeIframeAPIReady()
 {
 	player = new YT.Player("youtube",
 	{
-		height: "390",
-		width: "640",
+		width: "320", height: "240",
 		videoId: "DYyTsyFya10",
+		
 		playerVars:
 		{
 			rel: 0, //do not show related videos
 			autoplay: 1, //autoplay when loaded
-			//developers.google.com/youtube/player_parameters
 		},
+		
 		events:
 		{
 			"onReady": function(event)
@@ -54,16 +56,7 @@ function onYouTubeIframeAPIReady()
 				{
 					return this.getVideoUrl().match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/)[7];
 				}
-			},
-			"onStateChange": function(event)
-			{
-				//?!
 			}
 		}
 	});
-}
-
-function getYoutubeID(yturl)
-{
-	return yturl.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/)[7];
 }

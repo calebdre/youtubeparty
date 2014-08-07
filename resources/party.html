@@ -6,17 +6,18 @@
 		<title>YoutubeParty</title>
 	</head>
 	<body>
+		
 		<div id="party">
-			<!--youtube embeds here-->
-			<div id="youtube"></div>
+			<div id="youtube"><!--iframe goes here--></div>
 		</div>
+		
 		<form id="queue">
 			<input type="text" placeholder="queue a video for the party!"/>
 		</form>
 		
 		<script src="//www.youtube.com/iframe_api" type="text/javascript"></script>
 		<script src="/socket.io/socket.io.js" type="text/javascript"></script>
-		<script src="/utilities/jquery.js" type="text/javascript"></script>
+		<script src="/jquery.js" type="text/javascript"></script>
 		
 		<script src="/party.js" type="text/javascript"></script>
 		<link href="/party.css" type="text/css" rel="stylesheet"/>

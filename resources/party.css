@@ -18,6 +18,13 @@ body
 	height: 100%;
 }
 
+/*
+	This is where the party happens! The
+	youtube video is embedded here in an
+	iframe, which we stretch to fill all
+	of the window.
+*/
+
 #party
 {
 	width: 100%;
@@ -31,8 +38,14 @@ body
 	width: 100%;
 	height: 100%;
 	
-	border:none;
+	border: none;
 }
+
+/*
+	This is how more videos can be added
+	to the party. At the moment, it only
+	provides a form for copying a URL.
+*/
 
 #queue
 {

@@ -10,7 +10,7 @@ application.get("/", function(request, response)
 
 
 server = require("http").Server(application);
-server.listen(process.env.PORT || 1271);
+server.listen(process.env.PORT || 80);
 
 var io = require("socket.io")(server);
 io.on("connection", function(socket)

@@ -1,18 +1,27 @@
+var SERVER_PORT = process.env.PORT || 8080;
+var STATIC_FILES = __dirname + "/resources/";
+
+var http = require("http");
 var express = require("express");
+var socket = require("socket.io");
 
 
 application = express();
-application.use(express.static("./resources"));
+application.use(express.static(STATIC_FILES));
 application.get("/", function(request, response)
 {
-	response.redirect("party.html");
+	response.sendfile(STATIC_FILES + "party.html");
 });
 
 
-server = require("http").Server(application);
-server.listen(process.env.PORT || 80);
+server = http.Server(application);
+server.listen(SERVER_PORT, function()
+{
+	console.log("Listening on " + SERVER_PORT);
+});
 
-var io = require("socket.io")(server);
+
+io = socket(server);
 io.on("connection", function(socket)
 {
 	Party.join(socket);

@@ -1,9 +1,11 @@
-YoutubeParty was a project from Codeday 2014 with the objective to clone turntable.fm or plug.dj. At the moment, it is still in development.
+YoutubeParty was a project from Codeday Atlanta 2014 that was developed as a clone of turntable.fm or plug.dj. At the moment, we are still trying to finish off the functionality for partying through youtube.
 
-### todo now
-* maintain a queue of videos.
-  * allow users to rearrange the queue (with jQueryUI?)
-* when the timer ends, load the next video in the queue.
+### To Do Now
+* Maintain a queue of videos.
+  * Allow a video to be added to the queue.
+  * Allow a video to be deleted from the queue.
+  * Allow the videos to be rearranged in the queue.
+* When the timer ends, load the next video in the queue.
 
-### todo later
+### To Do Later
 * authenticate users against a database?
